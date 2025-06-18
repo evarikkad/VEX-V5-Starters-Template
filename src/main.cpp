@@ -95,8 +95,8 @@ void usercontrol(void) {
     double leftPower  = fwd + turn;
     double rightPower = fwd - turn;
 
-    spinLeftDT(leftPower);
-    spinRightDT(rightPower);
+    spinLeftDT(leftPower*0.5);
+    spinRightDT(rightPower/2);
 
     // ========== ARM CONTROL ========== //
     if (Controller.ButtonA.pressing()) {

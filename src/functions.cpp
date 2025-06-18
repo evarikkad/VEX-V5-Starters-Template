@@ -43,3 +43,27 @@ void spinDT(double velocity) {
     spinRightDT(velocity);
     spinLeftDT(velocity);
 }
+
+//Copy This Funtion When Teaching
+void spinDTWithDistance(double inches, double velocity) {
+    setDTPosition(inches);
+    spinDT(velocity);
+    while (LF.position(degrees) < inchesToDegrees(inches)) {
+        vex::task::sleep(20);
+    }
+    stopDT();
+}
+
+void turnDTWithAngle(double angle, double velocity) {
+    InertialSensor.setHeading(0, degrees);
+    RF.spin(forward, velocity, percent);
+    RM.spin(forward, velocity, percent);
+    RB.spin(forward, velocity, percent);
+    LF.spin(reverse, velocity, percent);
+    LM.spin(reverse, velocity, percent);
+    LB.spin(reverse, velocity, percent);
+    while (fabs(InertialSensor.heading(degrees)) < fabs(angle)) {
+        vex::task::sleep(20);
+    }
+    stopDT();
+}

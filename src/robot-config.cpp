@@ -13,11 +13,11 @@ If it seems like some of your motors are running against eachother in the drivet
 vex::brain Brain;
 vex::controller Controller(vex::controllerType::primary);
 
-vex::motor LB(vex::PORT3, vex::gearSetting::ratio6_1, false); //Left Back Motor
-vex::motor LM(vex::PORT8, vex::gearSetting::ratio6_1, false); //Left Middle Motor
+vex::motor LB(vex::PORT5, vex::gearSetting::ratio6_1, false); //Left Back Motor
+vex::motor LM(vex::PORT3, vex::gearSetting::ratio6_1, false); //Left Middle Motor
 vex::motor LF(vex::PORT1, vex::gearSetting::ratio6_1, false); //Left Front Motor
-vex::motor RB(vex::PORT4, vex::gearSetting::ratio6_1, true); //Right Back Motor
-vex::motor RM(vex::PORT5, vex::gearSetting::ratio6_1, true); //Right Middle Motor
+vex::motor RB(vex::PORT6, vex::gearSetting::ratio6_1, true); //Right Back Motor
+vex::motor RM(vex::PORT4, vex::gearSetting::ratio6_1, true); //Right Middle Motor
 vex::motor RF(vex::PORT2, vex::gearSetting::ratio6_1, true); //Right Front Motor
 
 vex::motor_group LeftDrive(LF, LM, LB);
@@ -32,7 +32,7 @@ vex::motor Arm2(vex::PORT12, vex::gearSetting::ratio18_1, true); //Arm motor
 vex::digital_out DoubleActingPiston(Brain.ThreeWirePort.A);
 vex::digital_out SingleActingPiston(Brain.ThreeWirePort.B);
 
-vex::inertial InertialSensor(vex::PORT9);
+vex::inertial InertialSensor(vex::PORT10);
 
 void vexcodeInit() {
   InertialSensor.calibrate();
